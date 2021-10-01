@@ -37,4 +37,4 @@ Projeyi calistirmak icin :
 Projeyi Youtube de nasil Programladigimizi inceleyebilirsiniz! : 
 <a href="https://www.youtube.com/watch?v=xxD0YQYeeWU&t=3s">Koddunyam.net</a>
 
-![Görünüm](img/Screenshot_20210913_104640.png)
+![Görünüm](img/koddunyam.png)
