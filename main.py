@@ -70,7 +70,7 @@ def kitap_Ekle():
 
 
 def kitap_Duzenle_Arayuz():
-
+    """ Kitap Düzenle Arayüzüne tablo icerisinden bilgileri gönderen fonksiyon. """
 
     try:
         MainWindow2.show()
@@ -127,6 +127,8 @@ def kitap_Sil():
 
 
 def cikis():
+    """ Cikis yapilsin mi sorgusunu yapan fonksiyon. """
+
     soru = QtWidgets.QMessageBox.question(MainWindow, "Emin misiniz?", "Programdan cikmak istediginize emin misiniz?", \
                                           QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
     if soru == QtWidgets.QMessageBox.Yes:
