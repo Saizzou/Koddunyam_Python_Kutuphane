@@ -64,3 +64,17 @@ def tablo_icinde_Ara(kitap_Adi):
     """ SQLite3 Veritabani icerisinde belirli Kitap Adini arayan fonksiyon. """
 
     imlec.execute(f"SELECT SAYFASAYISI, YAZARADI, KATEGORI, RAF from kitaplar where KITAPADI = {kitap_Adi}")
+
+
+def tablo_icerik_duzenle(id):
+    """ SQLite3 Veritabani icerisinde belirli icerikleri düzenlemek icin kullanilan SQL Komutu. """
+
+    icerik = imlec.execute(f"SELECT KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar where ID= {id}")
+    return icerik
+
+
+def tablo_icerikleri_dondur():
+    """ SQLite3 icerisindeki tüm iceriklerin ciktisini veren fonksiyon. """
+
+    icerik = imlec.execute("SELECT ID,KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar")
+    return icerik
