@@ -27,10 +27,9 @@ def tablo_guncelle():
 
     ui.table_Icerik.clear()
     ui.table_Icerik.setHorizontalHeaderLabels(('ID','KitapAdi','SayfaSayisi','YazarAdi','Kategori','Raf'))
-    imlec = veritabani.imlec
-    imlec.execute("SELECT ID,KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar")
+    icerik = veritabani.tablo_icerikleri_dondur()
 
-    for satir, satir_veri in enumerate(imlec):
+    for satir, satir_veri in enumerate(icerik):
         for sutun, sutun_veri in enumerate(satir_veri):
             ui.table_Icerik.setItem(satir, sutun, QtWidgets.QTableWidgetItem(str(sutun_veri)))
     print("[+] Veriler güncellendi ve Tablo icerisine yazdirildi.")
@@ -79,8 +78,7 @@ def kitap_Duzenle_Arayuz():
         index = ui.table_Icerik.currentIndex()
         veri = ui.table_Icerik.model().index(index.row(), 0)
         id = ui.table_Icerik.model().data(veri)
-        imlec = veritabani.imlec
-        imlec.execute(f"SELECT KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar where ID= {id}")
+        imlec = veritabani.tablo_icerik_duzenle(id)
         for icerik in imlec:
             kitap_Adi = icerik[0]
             sayfa_Sayisi = icerik[1]
