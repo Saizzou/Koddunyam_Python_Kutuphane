@@ -1,4 +1,4 @@
-<h1 align="center">Java Telefon Rehberi</h1>
+<h1 align="center">SQLite3 Kütüphane Uygulamasi</h1>
 
 <div align="center">
   <strong>SQLite3 ile calisan Kütüphane Arayüzü</strong>
