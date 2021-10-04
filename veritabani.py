@@ -63,7 +63,8 @@ def tablo_Sil(tablo_adi):
 def tablo_icinde_Ara(kitap_Adi):
     """ SQLite3 Veritabani icerisinde belirli Kitap Adini arayan fonksiyon. """
 
-    imlec.execute(f"SELECT SAYFASAYISI, YAZARADI, KATEGORI, RAF from kitaplar where KITAPADI = {kitap_Adi}")
+    islem = imlec.execute(f"SELECT ID, KITAPADI, SAYFASAYISI, YAZARADI, KATEGORI, RAF from kitaplar where KITAPADI = '{kitap_Adi}'")
+    return islem
 
 
 def tablo_icerik_duzenle(id):
