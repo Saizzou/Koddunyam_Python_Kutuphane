@@ -44,10 +44,9 @@ def kitap_Ara():
     else:
         ui.table_Icerik.clear()
         ui.table_Icerik.setHorizontalHeaderLabels(('ID', 'KitapAdi', 'SayfaSayisi', 'YazarAdi', 'Kategori', 'Raf'))
-        imlec = veritabani.imlec
-        imlec.execute(f"SELECT ID, KITAPADI, SAYFASAYISI, YAZARADI, KATEGORI, RAF from kitaplar where KITAPADI = '{kitap_Adi}'")
+        arama = veritabani.tablo_icinde_Ara(kitap_Adi)
 
-        for satir, satir_veri in enumerate(imlec):
+        for satir, satir_veri in enumerate(arama):
             for sutun, sutun_veri in enumerate(satir_veri):
                 ui.table_Icerik.setItem(satir, sutun, QtWidgets.QTableWidgetItem(str(sutun_veri)))
 
