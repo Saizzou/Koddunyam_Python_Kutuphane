@@ -38,3 +38,6 @@ Projeyi Youtube de nasil Programladigimizi inceleyebilirsiniz! :
 <a href="https://www.youtube.com/watch?v=xxD0YQYeeWU&t=3s">Koddunyam.net</a>
 
 ![Görünüm](img/koddunyam.png)
+
+### Katilimcilar:
+SQL Incelemesi icin <a href="https://github.com/MucahitSaratar">Mücahit Saratar</a>'a tesekkür ederim!
