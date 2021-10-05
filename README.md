@@ -1,5 +1,6 @@
 <h1 align="center">SQLite3 Kütüphane Uygulamasi</h1>
 ![Görünüm](img/koddunyam.png)
+<img alt="Görünüm" src="img/koddunyam.png">
 <div align="center">
   <strong>SQLite3 ile calisan Kütüphane Arayüzü</strong>
 </div>
