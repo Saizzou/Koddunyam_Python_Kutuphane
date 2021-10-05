@@ -46,9 +46,12 @@ def tablo_Bilgileri_Oku():
     for satir in bilgiler:
         kitapadi = satir[0]
         SayfaSayisi = satir[1]
+        YazarAdi = satir[2]
+        Kategori = satir[3]
+        Raf = satir[4]
 
 
-def tablo_Bilgileri_Sil(id):
+def tablo_Bilgileri_Sil(id:int):
     """ SQLite3 Veritabani icerisindeki bilgileri siler!"""
 
     imlec.execute(f"DELETE FROM kitaplar where ID={id}")
@@ -67,7 +70,7 @@ def tablo_icinde_Ara(kitap_Adi):
     return islem
 
 
-def tablo_icerik_duzenle(id):
+def tablo_icerik_duzenle(id:int):
     """ SQLite3 Veritabani icerisinde belirli icerikleri düzenlemek icin kullanilan SQL Komutu. """
 
     icerik = imlec.execute(f"SELECT KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar where ID= {id}")
@@ -79,3 +82,7 @@ def tablo_icerikleri_dondur():
 
     icerik = imlec.execute("SELECT ID,KITAPADI,SAYFASAYISI,YAZARADI,KATEGORI,RAF from kitaplar")
     return icerik
+
+
+def secure_params(currenparam):
+    return currenparam.replace("\"","").replace("'","")
