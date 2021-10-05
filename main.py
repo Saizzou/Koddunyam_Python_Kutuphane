@@ -39,6 +39,7 @@ def kitap_Ara():
     """ Veritabani icerisinde olan kitabi arar. """
 
     kitap_Adi = ui.line_Ara.text()
+    kitap_Adi = veritabani.secure_params(kitap_Adi)
     if kitap_Adi == "":
         tablo_guncelle()
     else:
@@ -73,10 +74,11 @@ def kitap_Duzenle_Arayuz():
     """ Kitap Düzenle Arayüzüne tablo icerisinden bilgileri gönderen fonksiyon. """
 
     try:
+
         MainWindow2.show()
         index = ui.table_Icerik.currentIndex()
         veri = ui.table_Icerik.model().index(index.row(), 0)
-        id = ui.table_Icerik.model().data(veri)
+        id = int(ui.table_Icerik.model().data(veri))
         imlec = veritabani.tablo_icerik_duzenle(id)
         for icerik in imlec:
             kitap_Adi = icerik[0]
@@ -103,7 +105,7 @@ def kitap_Duzenle():
 
     index = ui.table_Icerik.currentIndex()
     veri = ui.table_Icerik.model().index(index.row(), 0)
-    id = ui.table_Icerik.model().data(veri)
+    id = int(ui.table_Icerik.model().data(veri))
     kitap_Adi = ui2.line_Kitap_adi.text()
     sayfa_Sayisi = int(ui2.line_Sayfa_Sayisi.text())
     yazar_Adi = ui2.line_Yazar_Adi.text()
@@ -120,10 +122,9 @@ def kitap_Sil():
 
     index = ui.table_Icerik.currentIndex()
     veri = ui.table_Icerik.model().index(index.row(), 0)
-    id = ui.table_Icerik.model().data(veri)
+    id = int(ui.table_Icerik.model().data(veri))
     veritabani.tablo_Bilgileri_Sil(id)
     tablo_guncelle()
-
 
 
 def cikis():
